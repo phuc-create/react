@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+$laptop-device-width: 1870px;
+$laptop-large-width: 1440px;
+$laptop-itself-width:1260px;
+$laptop-small-width: 1024px;
+$table-device-width: 768px;
+$iphone-large-plus-width: 448px;
+$iphone-large-x-width: 375px;
+$mobile-device-small-width: 360px;
+$iphone-se-width: 320px;
+@mixin laptop-device {
+    @media (max-width: #{$laptop-device-width}) {
+        @content;
+    }
+}
+
+@mixin laptop-large {
+    @media (max-width: #{$laptop-large-width}) {
+        @content;
+    }
+}
+
+@mixin laptop-itself {
+    @media(max-width:#{$laptop-itself-width}) {
+        @content;
+    }
+}
+
+@mixin laptop-small {
+    @media (max-width:#{$laptop-small-width}) {
+        @content;
+    }
+}
+
+@mixin table-device {
+    @media (max-width: #{$table-device-width}) {
+        @content;
+    }
+}
+
+@mixin iphone-large-plus {
+    @media (max-width: #{$iphone-large-plus-width}) {
+        @content;
+    }
+}
+
+@mixin iphone-large-x {
+    @media (max-width: #{$iphone-large-x-width}) {
+        @content;
+    }
+}
+
+@mixin mobile-device-small {
+    @media (max-width: #{$mobile-device-small-width}) {
+        @content;
+    }
+}
+
+@mixin iphone-se {
+    @media (max-width: #{$iphone-se-width}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #ffcccc;
+    --color-text: #2d3436;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    .header {
+        background: #d9a7c7;
+        background: linear-gradient(to right, #fffcdc, #d9a7c7);
+        background: linear-gradient(to right, #fffcdc, #d9a7c7);
+        @include flex();
+        flex-direction: column;
+        position: relative;
+        max-width: 100%;
+        min-width: 320px;
+        height: auto;
+        .menu-show__toggle {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #2f3542;
+            z-index: 2;
+            overflow: hidden;
+            @include flex();
+            flex-direction: column;
+            transition: .5s;
+            padding: 40px;
+            .__toggle--menu-single.active-move {
+                transition: .5s;
+                position: relative;
+                width: 80%;
+                height: calc(100% / 6);
+                left: -100%;
+                margin: 2px;
+                @include flex();
+                animation: moveslow 2s forwards;
+                transition-delay: .6s;
+                &:nth-child(1) {
+                    animation-delay: 0.1s !important;
+                    background: linear-gradient(90deg, rgba(0, 36, 25, 1) 0%, rgba(9, 121, 82, 1) 35%, rgba(0, 176, 255, 1) 100%);
+                    transition: .5s;
+                }
+                &:nth-child(2) {
+                    animation-delay: 0.3s !important;
+                    background: linear-gradient(90deg, rgba(0, 36, 25, 1) 0%, rgba(9, 121, 82, 1) 35%, rgba(0, 176, 255, 1) 100%);
+                    transition: .3s;
+                }
+                &:nth-child(3) {
+                    animation-delay: 0.5s !important;
+                    background: linear-gradient(90deg, rgba(0, 33, 36, 0.17970938375350143) 0%, rgba(115, 121, 9, 0.8715861344537815) 35%, rgba(185, 255, 0, 0.7343312324929971) 100%);
+                    transition: .5s;
+                }
+                &:nth-child(4) {
+                    animation-delay: 0.7s !important;
+                    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+                    transition: .5s;
+                }
+                &:nth-child(5) {
+                    animation-delay: 0.9s !important;
+                    background: linear-gradient(to right, #ffefba, #ffffff);
+                    transition: .5s;
+                }
+                @keyframes moveslow {
+                    0% {
+                        left: -100%;
+                        margin: 2px;
+                    }
+                    100% {
+                        left: 0;
+                        margin: 0;
+                        background: #2980b9;
+                    }
+                }
+                a {
+                    font-size: 5vw;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: #2d3436;
+                }
+                &.animatewidth {
+                    transition-delay: 0.9s;
+                    width: 100%;
+                    height: calc(100% /4);
+                }
+            }
+            &.active-show {
+                left: 0;
+                padding: 0;
+            }
+            .__toggle-remove {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 20px;
+                right: -200px;
+                cursor: pointer;
+                @include flex();
+                transition: .5s;
+                flex-direction: column;
+                .__toggle-remove--line {
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 10px;
+                    background-color: #fff;
+                    &:nth-child(1) {
+                        margin: 0px -2px -4px -3px;
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        margin: 0px 1px 4px 2px;
+                        transform: rotate(-45deg);
+                    }
+                }
+                &.active {
+                    right: 30px;
+                    z-index: 10;
+                }
+            }
+        }
+        .nav {
+            position: relative;
+            width: 90%;
+            height: auto;
+            @include flex();
+            padding: 20px 15px;
+            margin-top: 20px;
+            justify-content: space-between !important;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(40px);
+            .logo {
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;
+                flex-direction: column;
+                h1 {
+                    font-size: 45px;
+                    color: var(--color-text);
+                    span.logo__hue-color {
+                        color: red;
+                        transition: .4s;
+                    }
+                    @include laptop-small {
+                        font-size: 35px;
+                    }
+                }
+                .logo--line {
+                    width: 100%;
+                    height: 3px;
+                    transition: .4s;
+                    background: red;
+                }
+            }
+            .toggle-icon__show {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+                align-items: flex-end;
+                position: relative;
+                cursor: pointer;
+                .toggle-icon__show--line {
+                    width: 80%;
+                    height: 9px;
+                    border-radius: 10px;
+                    background: #57606f;
+                    margin: 4px 0px;
+                    &:nth-child(3) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .main__content {
+            @include flex();
+            width: 90%;
+            height: 800px;
+            position: relative;
+            .__content {
+                min-width: 40%;
+                height: 100%;
+                position: relative;
+                .__content--middle {
+                    position: absolute;
+                    top: 30%;
+                    left: 0%;
+                    width: 100%;
+                    height: 100%;
+                    .__content--greeting {
+                        font-size: 40px;
+                        color: var(--color-text);
+                        margin-bottom: 10px;
+                        font-family: 'Roboto', sans-serif;
+                        text-transform: capitalize;
+                        @include laptop-large {
+                            font-size: 3vw;
+                        }
+                        @include table-device {
+                            font-size: 4vw;
+                        }
+                        @include iphone-large-plus {
+                            font-size: 6vw;
+                        }
+                    }
+                    .__content--name {
+                        font-size: 40px;
+                        color: var(--color-text);
+                        margin-bottom: 10px;
+                        text-transform: capitalize;
+                        position: relative;
+                        font-family: 'Roboto', sans-serif;
+                        transition: .5s;
+                        .--name--up {
+                            font-size: 50px;
+                            color: red;
+                            transition: .5s;
+                            @include laptop-large {
+                                font-size: 36px;
+                            }
+                            @include laptop-itself {
+                                font-size: 2.6vw;
+                            }
+                            @include table-device {
+                                font-size: 5vw;
+                            }
+                            @include iphone-large-plus {
+                                font-size: 6vw;
+                            }
+                        }
+                        @include laptop-device {
+                            font-size: 40px;
+                        }
+                        @include laptop-large {
+                            font-size: 35px;
+                        }
+                        @include laptop-itself {
+                            font-size: 3vw;
+                        }
+                        @include table-device {
+                            font-size: 5vw;
+                        }
+                        @include iphone-large-plus {
+                            font-size: 5.5vw;
+                        }
+                    }
+                    .__content--job {
+                        font-size: 45px;
+                        color: rgba(255, 255, 255, 0.1);
+                        margin-bottom: 10px;
+                        text-transform: capitalize;
+                        -webkit-text-stroke: 0.1px var(--color-text);
+                        transition: 0.5s;
+                        position: relative;
+                        font-family: 'Roboto', sans-serif;
+                        overflow: hidden;
+                        font-weight: bold;
+                        width: 100%;
+                        height: auto;
+                        &::before {
+                            content: attr(data-text);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            color: var(--color-text);
+                            -webkit-text-stroke: 0px var(--color-text);
+                            border-right: 2px solid #2d3436;
+                            overflow: hidden;
+                            animation: text 8s linear infinite;
+                            /*margin-top: 10px;*/
+                        }
+                        @keyframes text {
+                            0%,
+                            100% {
+                                width: 0%;
+                            }
+                            70% {
+                                width: 100%;
+                            }
+                        }
+                        @include laptop-device {
+                            font-size: 41px;
+                        }
+                        @include laptop-large {
+                            font-size: 36px;
+                            height: 65px;
+                        }
+                        @include laptop-itself {
+                            font-size: 3vw;
+                            height: 38px;
+                        }
+                        @include table-device {
+                            font-size: 5vw;
+                            height: 50px;
+                        }
+                        @include iphone-large-plus {
+                            font-size: 7vw;
+                            height: 29px;
+                        }
+                    }
+                    .__content--explore-button {
+                        position: relative;
+                        width: 200px;
+                        height: 60px;
+                        left: -15px;
+                        margin-top: 40px;
+                        cursor: pointer;
+                        a {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            @include flex();
+                            font-size: 25px;
+                            font-weight: 500;
+                            color: var(--color-text);
+                            text-decoration: none;
+                            border-top: 1px solid rgba(255, 255, 255, 0.6);
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                            border-radius: 30px;
+                            background: rgba(255, 255, 255, 0.05);
+                            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+                            z-index: 1;
+                            overflow: hidden;
+                            transition: .5s;
+                            letter-spacing: 2px;
+                            backdrop-filter: blur(15px);
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 70%;
+                                height: 200px;
+                                background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
+                                transform: skewX(35deg) translateX(0);
+                                transition: .5s;
+                            }
+                            i {
+                                font-size: 30px;
+                            }
+                            @include laptop-device {
+                                font-size: 20px;
+                            }
+                            @include laptop-large {
+                                font-size: 17px;
+                            }
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            bottom: -5px;
+                            width: 35px;
+                            height: 10px;
+                            background-color: #ffcccc;
+                            border-radius: 10px;
+                            transition: .5s;
+                            box-shadow: 0px 0px 5px #ffcccc, 0px 0px 15px #ffcccc, 0px 0px 30px #ffcccc, 0px 0px 60px #ffcccc;
+                            transition-delay: 0.3s;
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            top: -5px;
+                            width: 35px;
+                            height: 10px;
+                            background-color: #ffcccc;
+                            border-radius: 10px;
+                            transition: .5s;
+                            box-shadow: 0px 0px 5px #ffcccc, 0px 0px 15px #ffcccc, 0px 0px 30px #ffcccc, 0px 0px 60px #ffcccc;
+                            transition-delay: 0.3s;
+                        }
+                        &:hover {
+                            &::before {
+                                bottom: 0;
+                                width: 80%;
+                                height: 50%;
+                                border-radius: 30px;
+                            }
+                            &::after {
+                                top: 0;
+                                width: 80%;
+                                height: 50%;
+                                border-radius: 30px;
+                            }
+                            a {
+                                letter-spacing: 4px;
+                                &::before {
+                                    transform: skewX(35deg) translateX(200%);
+                                }
+                            }
+                        }
+                        @include laptop-device {
+                            width: 175px;
+                            height: 60px;
+                            margin-top: 35px;
+                        }
+                        @include laptop-large {
+                            height: 53px;
+                        }
+                        @include laptop-small {
+                            width: 150px;
+                            height: 47px;
+                        }
+                    }
+                    @include table-device {
+                        top: 24%;
+                    }
+                }
+                @include laptop-device {
+                    min-width: 50%;
+                }
+                @include table-device {
+                    min-width: 100%;
+                }
+                @include table-device {
+                    left: 3%;
+                }
+            }
+            .__content-img {
+                min-width: 60%;
+                height: 100%;
+                position: relative;
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: 80%;
+                    background-size: cover;
+                }
+                .__content-img-button {
+                    position: absolute;
+                    width: 200px;
+                    height: 60px;
+                    a.__content-button--hover {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+                        border-top: 1px solid rgba(255, 255, 255, 0.6);
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 30px;
+                        color: #2d3436;
+                        font-size: 20px;
+                        text-transform: capitalize;
+                        letter-spacing: 4px;
+                        transition: .5s;
+                        backdrop-filter: blur(5px);
+                        font-weight: 600;
+                        &.__button--hover-fi {
+                            background: unset;
+                            color: #fff;
+                        }
+                        &.__button--hover-s {
+                            background: linear-gradient(to left, #4b6584, #7efff5);
+                        }
+                        &.__button--hover-t {
+                            background: linear-gradient(to left, #fc5c65, #e77f67);
+                        }
+                        &.__button--hover-f {
+                            background: linear-gradient(to left, #778ca3, #a5b1c2);
+                        }
+                        @include laptop-large {
+                            font-size: 16px;
+                            letter-spacing: 1px;
+                        }
+                        @include iphone-large-plus {
+                            font-size: 10px;
+                        }
+                    }
+                    &:nth-child(1) {
+                        top: 57%;
+                        left: 58%;
+                        z-index: 1;
+                        animation: firstMove 7s linear infinite;
+                        @keyframes firstMove {
+                            0%,
+                            100% {
+                                left: 57%;
+                            }
+                            50% {
+                                left: 69%;
+                            }
+                        }
+                        @include laptop-device {
+                            top: 54%;
+                        }
+                        @include laptop-large {
+                            top: 52%;
+                        }
+                        @include laptop-itself {
+                            top: 51%;
+                        }
+                        @include table-device {
+                            top: 57%;
+                        }
+                        @include iphone-large-plus {
+                            top: 54%;
+                        }
+                    }
+                    &:nth-child(2) {
+                        top: 13%;
+                        left: 20%;
+                        z-index: 1;
+                        animation: secondMove 6s linear infinite;
+                        @keyframes secondMove {
+                            0%,
+                            100% {
+                                left: 20%;
+                            }
+                            50% {
+                                left: 32%;
+                            }
+                        }
+                        @include laptop-device {
+                            top: 18%;
+                        }
+                        @include laptop-large {
+                            top: 20%;
+                        }
+                        @include laptop-itself {
+                            top: 21%;
+                        }
+                        @include table-device {
+                            top: 12%;
+                        }
+                        @include iphone-large-plus {
+                            top: 16%;
+                        }
+                    }
+                    &:nth-child(3) {
+                        top: 40%;
+                        left: 18%;
+                        z-index: 1;
+                        animation: thirdMove 6s linear infinite;
+                        @keyframes thirdMove {
+                            0%,
+                            100% {
+                                left: 18%;
+                            }
+                            50% {
+                                left: 6%;
+                            }
+                        }
+                        @include laptop-small {
+                            @keyframes thirdMove {
+                                0%,
+                                100% {
+                                    left: 13%;
+                                }
+                                50% {
+                                    left: 2%;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(4) {
+                        top: 27%;
+                        left: 61%;
+                        z-index: 1;
+                        animation: fourthMove 8s linear infinite;
+                        @keyframes fourthMove {
+                            0%,
+                            100% {
+                                left: 61%;
+                            }
+                            50% {
+                                left: 74%;
+                            }
+                        }
+                        @include laptop-large {
+                            top: 29%;
+                        }
+                    }
+                    @include laptop-device {
+                        width: 165px;
+                        height: 50px;
+                    }
+                    @include laptop-large {
+                        width: 150px;
+                        height: 46px;
+                    }
+                    @include laptop-itself {
+                        width: 130px;
+                        height: 40px;
+                    }
+                    @include laptop-small {
+                        width: 100px;
+                        height: 32px;
+                    }
+                    @include table-device {
+                        width: 125px;
+                        height: 40px;
+                    }
+                    @include iphone-large-plus {
+                        width: 95px;
+                        height: 30px;
+                    }
+                }
+                @include laptop-device {
+                    min-width: 50%;
+                }
+                @include table-device {
+                    min-width: 100%;
+                }
+            }
+            @include laptop-large {
+                max-height: 700px;
+            }
+            @include laptop-itself {
+                max-height: 600px;
+            }
+            @include laptop-small {
+                max-height: 495px;
+            }
+            @include table-device {
+                flex-direction: column;
+                max-height: 760px;
+            }
+            @include iphone-large-plus {
+                max-height: 695px;
+            }
+        }
+        .header__scrol-down {
+            position: absolute;
+            bottom: 5px;
+            left: 45%;
+            width: 140px;
+            height: 60px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .__scroll-down--icon {
+                width: 20px;
+                height: 35px;
+                border: 2px solid #596275;
+                border-radius: 20px 20px 15px 15px;
+                position: relative;
+                transition: 0.5s;
+                animation: MouseScroll 4s linear infinite;
+                @keyframes MouseScroll {
+                    0%,
+                    100% {
+                        bottom: -10px;
+                    }
+                    50% {
+                        bottom: 0;
+                    }
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 4px;
+                    left: 40%;
+                    width: 4px;
+                    height: 10px;
+                    background: #2d3436;
+                    border-radius: 10px;
+                    animation: MouseMove 1s linear infinite;
+                    transition: .5s ease;
+                    @keyframes MouseMove {
+                        0%,
+                        100% {
+                            height: 6px;
+                            bottom: 2px;
+                        }
+                        50% {
+                            bottom: 4px;
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+            .__scroll-down--text {
+                font-size: 14px;
+                animation: textShadow 2s linear infinite;
+                @keyframes textShadow {
+                    0%,
+                    100% {
+                        color: transparent;
+                    }
+                    50% {
+                        color: var(--color-text);
+                    }
+                }
+            }
+        }
+    }
+}
