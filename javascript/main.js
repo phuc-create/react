@@ -37,7 +37,7 @@ toggleButton.addEventListener("click", () => {
         single.classList.add("active-move");
         setTimeout(() => {
             single.classList.add("animatewidth");
-        }, 2000);
+        }, 1700);
     })
 
 });
@@ -50,5 +50,5 @@ toggleRemove.addEventListener("click", () => {
     toggleRemove.classList.remove("active");
     setTimeout(() => {
         MenuShow.classList.remove("active-show");
-    }, 600)
+    }, 800)
 })
