@@ -11,7 +11,7 @@ function setColorforSpan() {
     let sharp = "#";
     for (var i = 0; i < 6; i++) {
         sharp += HEX[autoColor()];
-        console.log(sharp);
+
     }
     colorSpan.forEach(singleColor => {
         singleColor.style.color = sharp;
@@ -37,7 +37,7 @@ toggleButton.addEventListener("click", () => {
         single.classList.add("active-move");
         setTimeout(() => {
             single.classList.add("animatewidth");
-        }, 1700);
+        }, 1300);
     })
 
 });
@@ -50,5 +50,10 @@ toggleRemove.addEventListener("click", () => {
     toggleRemove.classList.remove("active");
     setTimeout(() => {
         MenuShow.classList.remove("active-show");
-    }, 800)
+    }, 500)
+})
+const headerOverlay = document.querySelector(".header-overlay");
+
+window.addEventListener("load", () => {
+    headerOverlay.classList.remove("active");
 })

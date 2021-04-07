@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="./css/media.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script defer src="./javascript/main.js"></script>
+    <script defer src="./javascript/scrollAnimation.js"></script>
 
 </head>
 
 <body>
     <div class="container">
+        <!-- HEADER -->
         <div class="header">
+            <div class="header-overlay active"></div>
             <div class="menu-show__toggle">
                 <div class="__toggle-remove">
                     <div class="__toggle-remove--line"></div>
@@ -62,29 +65,113 @@
                 <p class="__scroll-down--text">Scroll down</p>
             </div>
         </div>
-
-
+        <!--X- HEADER -X-->
+        <!--- ABOUT ME --->
         <section class="about">
+            <div class="about-overpage-off"></div>
             <div class="about__block"></div>
             <div class="about__container">
                 <div class="about-overlay"></div>
-                <div class="about-me">
-                    <p class="about-me-text">
-                        About me
-                    </p>
-                </div>
+
                 <div class="about__ls">
                     <div class="about__ls-text">Personal Portfolio</div>
                     <div class="about__ls--bg"></div>
+                    <div class="about-me">
+                        <p class="about-me-text">
+                            About me
+                        </p>
+                    </div>
+                    <div class="about-me-content">
+                        <p class="about-me-content-ani">Nguyen Huu Phuc -</p>
+                        <p class="about-me-content-ani">14/09/2000 -</p>
+                        <p class="about-me-content-ani">Web Developer -</p>
+                    </div>
                 </div>
                 <div class="about__rs">
+                    <div class="about-me no-ani">
+                        <p class="about-me-text stroke">
+                            About me
+                        </p>
+                    </div>
                     <div class="about__rs--bg"></div>
                     <div class="about__rs-text">About Me</div>
                 </div>
             </div>
+            <div class="about__scrol-down">
+                <div class="about__scroll-down--icon">
+
+                </div>
+                <p class="about__scroll-down--text">Scroll down</p>
+            </div>
+            <div class="about-me-content-outside">
+                <p class="about-me-outside">Nguyen Huu Phuc -</p>
+                <p class="about-me-outside">14/09/2000 -</p>
+                <p class="about-me-outside">Student At IUH -</p>
+            </div>
         </section>
-
-
+        <!--X- ABOUT ME -X-->
+        <!--- A BIT INFOR ABOUT ME --->
+        <section class="me__infor">
+            <p>“Hi, I'm Phuc”</p>
+            <p>“And I'm a friendly person”</p>
+            <p>“Being a quick learner and eager to learn, learning and working with programming languages and tools allows me to strengthen myself and I hope to be able to make it useful.”</p>
+        </section>
+        <!--X- A BIT INFOR ABOUT ME -X-->
+        <!--- PROJECT I'M WORKING ON --->
+        <section class="project">
+            <div class="proj__block">
+                <div class="proj__block--img">
+                    <img class="proj__block--img-img" src="./images/shopeeui.jpeg" alt="">
+                    <div class="proj__block--img-overlay"></div>
+                    <div class="proj__block--content">
+                        <p>A single page application website using HTML5,SCSS,Javascript</p>
+                    </div>
+                </div>
+                <div class="proj__vis--content">
+                    <a id="proj__vis--open" href="https://phuc-create.github.io/shopee/">VISIT PAGE</a>
+                    <div class="proj__vis--line"></div>
+                </div>
+            </div>
+            <div class="proj__block">
+                <div class="proj__block--img">
+                    <img class="proj__block--img-img" src="./images/appleui.PNG" alt="">
+                    <div class="proj__block--img-overlay"></div>
+                    <div class="proj__block--content">
+                        <p>A website using ReactJS</p>
+                    </div>
+                </div>
+                <div class="proj__vis--content">
+                    <a id="proj__vis--open" href="https://ecommerce-wostify.netlify.app/">VISIT PAGE</a>
+                    <div class="proj__vis--line"></div>
+                </div>
+            </div>
+            <div class="proj__block">
+                <div class="proj__block--img">
+                    <img class="proj__block--img-img" src="./images/myshop.PNG" alt="">
+                    <div class="proj__block--img-overlay"></div>
+                    <div class="proj__block--content">
+                        <p>A website using html5,scss,javascript,php,mysql</p>
+                    </div>
+                </div>
+                <div class="proj__vis--content">
+                    <a id="proj__vis--open" href="https://petslandnew.000webhostapp.com/">VISIT PAGE</a>
+                    <div class="proj__vis--line"></div>
+                </div>
+            </div>
+            <!-- <div class="proj__block">
+                <div class="proj__block--img">
+                    <img class="proj__block--img-img" src="./images/game.PNG" alt="">
+                    <div class="proj__block--img-overlay"></div>
+                    <div class="proj__block--content">
+                        <p>A web-game javascript</p>
+                    </div>
+                </div>
+                <div class="proj__vis--content">
+                    <a href="https://phuc-create.github.io/Tech-Game/">VISIT PAGE</a>
+                </div>
+            </div> -->
+        </section>
+        <!--X- PROJECT I'M WORKING ON -X-->
     </div>
 </body>
 
