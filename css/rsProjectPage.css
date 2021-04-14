@@ -1,0 +1,249 @@
+    @media (max-width:1680px) {
+        .container .project .proj__block {
+            grid-column: 2/10;
+        }
+        .container .project .proj__block:nth-child(2) {
+            grid-column: 3/10;
+        }
+        .container .project .proj__block:nth-child(4) {
+            grid-column: 3/11;
+        }
+    }
+    
+    @media (max-width:1440px) {
+        .container .project .proj__block {
+            grid-column: 2/9;
+        }
+        .container .project .proj__block:nth-child(2) {
+            grid-column: 2/9;
+        }
+        .container .project .proj__block:nth-child(3) {
+            grid-column: 2/8;
+        }
+        .container .project .proj__block:nth-child(4) {
+            grid-column: 2/9;
+        }
+    }
+    
+    @media (max-width:1260px) {
+        .container .project .proj__block {
+            grid-column: 1/8;
+            grid-row: 1/5;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .container .project .proj__block:nth-child(2) {
+            grid-column: 1/8;
+            grid-row: 6/10;
+        }
+        .container .project .proj__block:nth-child(4) {
+            grid-column: 1/8;
+        }
+        .container .project .proj__block:nth-child(3) {
+            grid-row: 11/15;
+        }
+        .container .project .proj__block:nth-child(1) .proj__vis--content p {
+            top: 0%;
+            left: 20%;
+            font-size: 20px;
+        }
+        .container .project .proj__block:nth-child(2) .proj__vis--content p {
+            top: 0%;
+            left: 0%;
+            font-size: 21px;
+        }
+        .container .project .proj__block:nth-child(3) .proj__vis--content p {
+            top: 0%;
+            right: 0%;
+            font-size: 20px;
+        }
+        .container .project .proj__block:nth-child(4) .proj__vis--content p {
+            top: 0%;
+            left: 0;
+            font-size: 20px;
+        }
+        .container .project .proj__block:nth-child(1) .proj__vis--content a.active,
+        .container .project .proj__block:nth-child(2) .proj__vis--content a.active,
+        .container .project .proj__block:nth-child(3) .proj__vis--content a.active,
+        .container .project .proj__block:nth-child(4) .proj__vis--content a.active {
+            height: 55px;
+            border: 3px solid;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .container .project .proj__block:nth-child(1) .proj__vis--content .proj__vis--line.line1,
+        .container .project .proj__block:nth-child(2) .proj__vis--content .proj__vis--line.line2,
+        .container .project .proj__block:nth-child(3) .proj__vis--content .proj__vis--line.line3,
+        .container .project .proj__block:nth-child(4) .proj__vis--content .proj__vis--line.line4 {
+            height: 3px;
+        }
+    }
+    
+    @media (max-width:1024px) {
+        .container .project .proj__block,
+        .container .project .proj__block:nth-child(2),
+        .container .project .proj__block:nth-child(3),
+        .container .project .proj__block:nth-child(4) {
+            grid-column: 1/8;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .container .project .proj__block:nth-child(4) {
+            grid-row: 16/20;
+        }
+    }
+    
+    @media (max-width:768px) {
+        .container .project .proj__block .proj__block--img,
+        .container .project .proj__block:nth-child(3) .proj__block--img {
+            width: 50%;
+        }
+        .container .project .proj__block .proj__vis--content,
+        .container .project .proj__block:nth-child(3) .proj__vis--content {
+            width: 50%;
+        }
+        .container .project .proj__block .proj__block--img .proj__block--content p,
+        .container .project .proj__block:nth-child(2) .proj__block--img .proj__block--content p,
+        .container .project .proj__block:nth-child(3) .proj__block--img .proj__block--content p,
+        .container .project .proj__block:nth-child(4) .proj__block--img .proj__block--content p {
+            font-size: 20px;
+            padding: 10px;
+        }
+        .container .project .proj__block .proj__block--img .proj__block--content span,
+        .container .project .proj__block:nth-child(2) .proj__block--img .proj__block--content span,
+        .container .project .proj__block:nth-child(3) .proj__block--img .proj__block--content span,
+        .container .project .proj__block:nth-child(4) .proj__block--img .proj__block--content span {
+            font-size: 15px;
+            padding: 0px 10px;
+        }
+        .container .project .proj__block:nth-child(1) .proj__vis--content p,
+        .container .project .proj__block:nth-child(3) .proj__vis--content p {
+            top: 0%;
+            left: 8%;
+        }
+        .container .project .proj__block:nth-child(1) .proj__vis--content a.active,
+        .container .project .proj__block:nth-child(2) .proj__vis--content a.active,
+        .container .project .proj__block:nth-child(3) .proj__vis--content a.active,
+        .container .project .proj__block:nth-child(4) .proj__vis--content a.active {
+            height: 46px;
+            font-size: 18px;
+        }
+        .container .me__infor p:nth-child(3) {
+            margin: 0% 2%;
+        }
+    }
+    
+    @media (max-width:694px) {
+        .container .project {
+            height: 250vh;
+        }
+        .container .project .proj__block {
+            flex-direction: column;
+            grid-row: 1/7;
+        }
+        .container .project .proj__block .proj__block--img,
+        .container .project .proj__block:nth-child(2) .proj__block--img,
+        .container .project .proj__block:nth-child(3) .proj__block--img,
+        .container .project .proj__block:nth-child(4) .proj__block--img {
+            width: 70%;
+        }
+        .container .project .proj__block .proj__vis--content,
+        .container .project .proj__block:nth-child(2) .proj__vis--content,
+        .container .project .proj__block:nth-child(3) .proj__vis--content,
+        .container .project .proj__block:nth-child(4) .proj__vis--content {
+            width: 100%;
+            height: 75%;
+        }
+        .container .project .proj__block:nth-child(1) .proj__vis--content p,
+        .container .project .proj__block:nth-child(2) .proj__vis--content p,
+        .container .project .proj__block:nth-child(3) .proj__vis--content p,
+        .container .project .proj__block:nth-child(4) .proj__vis--content p {
+            top: 2%;
+            left: 0%;
+            font-size: 18px;
+        }
+        .container .project .proj__block .proj__block--img .proj__block--content span {
+            line-height: unset;
+        }
+        .container .project .proj__block:nth-child(2) {
+            grid-row: 7/14;
+        }
+        .container .project .proj__block:nth-child(2) .proj__block--img,
+        .container .project .proj__block:nth-child(4) .proj__block--img {
+            order: unset;
+        }
+        .container .project .proj__block:nth-child(2) .proj__vis--content {
+            width: 100%;
+            height: 75%;
+        }
+        .container .project .proj__block:nth-child(2) .proj__vis--content p {
+            right: 0;
+            font-size: 18px;
+        }
+        /*3*/
+        .container .project .proj__block:nth-child(3) {
+            grid-row: 14/20;
+        }
+        /*4*/
+        .container .project .proj__block:nth-child(4) {
+            grid-row: 20/26;
+        }
+        /*set line throught*/
+        .container .project .proj__block:nth-child(2) .proj__vis--content a,
+        .container .project .proj__block:nth-child(4) .proj__vis--content a {
+            left: 5%;
+        }
+        .container .project .proj__block .proj__vis--content a,
+        .container .project .proj__block:nth-child(3) .proj__vis--content a {
+            left: 48%;
+        }
+        .container .project .proj__block:nth-child(3) .proj__vis--content .proj__vis--line.line3,
+        .container .project .proj__block .proj__vis--content .proj__vis--line.line1 {
+            left: -5%;
+        }
+        .container .project .proj__block:nth-child(2) .proj__vis--content .proj__vis--line.line2,
+        .container .project .proj__block:nth-child(4) .proj__vis--content .proj__vis--line.line4 {
+            right: -5%;
+        }
+    }
+    
+    @media (max-width:448px) {
+        .container .project {
+            height: 290vh;
+        }
+        .container .project .proj__block {
+            grid-row: 1/8;
+        }
+        .container .project .proj__block:nth-child(2) {
+            grid-row: 8/17;
+        }
+        .container .project .proj__block:nth-child(3) {
+            grid-row: 17/24;
+        }
+        .container .project .proj__block:nth-child(4) {
+            grid-row: 24/31;
+        }
+        .container .project .proj__block .proj__block--img,
+        .container .project .proj__block:nth-child(2) .proj__block--img,
+        .container .project .proj__block:nth-child(3) .proj__block--img,
+        .container .project .proj__block:nth-child(4) .proj__block--img {
+            width: 100%;
+        }
+        .container .project .proj__block .proj__vis--content .proj__vis--line.line1.activeWidth,
+        .container .project .proj__block:nth-child(2) .proj__vis--content .proj__vis--line.line2.activeWidth,
+        .container .project .proj__block:nth-child(3) .proj__vis--content .proj__vis--line.line3.activeWidth,
+        .container .project .proj__block:nth-child(4) .proj__vis--content .proj__vis--line.line4.activeWidth {
+            width: 105%;
+        }
+        .container .project .proj__block:nth-child(2) .proj__vis--content a,
+        .container .project .proj__block:nth-child(4) .proj__vis--content a {
+            left: 0%;
+        }
+        .container .project .proj__block .proj__vis--content a,
+        .container .project .proj__block:nth-child(3) .proj__vis--content a {
+            left: 53%;
+        }
+        .container .project .proj__block:nth-child(2) .proj__block--img {
+            height: 75%;
+        }
+    }

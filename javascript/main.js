@@ -57,3 +57,11 @@ const headerOverlay = document.querySelector(".header-overlay");
 window.addEventListener("load", () => {
     headerOverlay.classList.remove("active");
 })
+const mouseEffect = document.querySelector(".__content-mouse");
+const middleContent = document.querySelector(".__content--middle");
+middleContent.addEventListener("mousemove", (e) => {
+    console.log(middleContent.clientWidth, middleContent.clientHeight);
+
+    mouseEffect.style.top = (e.clientY - 294) + "px";
+    mouseEffect.style.left = (e.clientX - 59) + "px";
+})
