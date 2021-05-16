@@ -1186,7 +1186,7 @@ body {
     .me__infor {
         position: relative;
         width: 100%;
-        height: 50vh;
+        height: 20vh;
         @include flex();
         flex-direction: column;
         justify-content: flex-start;
@@ -1204,6 +1204,77 @@ body {
                 margin: 0% 20%;
                 @include iphone-large-plus {
                     margin: 0 10px;
+                }
+            }
+        }
+    }
+    .me {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        .me__wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .m__w--left,
+            .m__w--right {
+                width: 50%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .m__w--left img {
+                width: 100%;
+                height: 70%;
+            }
+            .m__w--right {
+                h1 {
+                    font-size: 3vw;
+                    margin-bottom: 10px;
+                    color: #fff;
+                }
+                p {
+                    line-height: 35px;
+                    font-size: 18px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 1159px) {
+        .me .me__wrapper .m__w--right {
+            h1 {
+                font-size: 5vw;
+            }
+            p {
+                line-height: 30px;
+                font-size: 15px;
+            }
+        }
+    }
+    @media only screen and (max-width: 887px) {
+        .me .me__wrapper {
+            flex-direction: column;
+            .m__w--left {
+                img {
+                    height: 100%;
+                }
+                width: 90%;
+                height: 50%;
+            }
+            .m__w--right {
+                width: 90%;
+                height: 50%;
+                h1 {
+                    margin-bottom: unset;
+                }
+                p {
+                    line-height: 25px;
                 }
             }
         }
